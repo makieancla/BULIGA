@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stitch Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body class="bg-[#f8fcfa] font-sans">
+
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden"
+    style='font-family: Lexend, "Noto Sans", sans-serif;'>
+
+    <!-- HEADER -->
+    <header class="flex items-center justify-between border-b border-b-[#e7f3ec] px-10 py-3">
+      <div class="flex items-center gap-4 text-[#0d1b13]">
+        <div class="size-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+          </svg>
+        </div>
+        <h2 class="text-[#0d1b13] text-lg font-bold leading-tight tracking-[-0.015em]">Buliga</h2>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div
+  class="flex flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center min-h-screen p-4 rounded-lg"
+  style='background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url("https://st2.depositphotos.com/1518767/7638/i/450/depositphotos_76386431-stock-photo-happy-friends-gardening-for-the.jpg");'>
+  
+  <div class="flex flex-col gap-2 text-center">
+    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">
+      Connect, Contribute, and Grow with Buliga
+    </h1>
+    <h2 class="text-white text-sm font-normal leading-normal">
+      Buliga is a platform designed to bridge the gap between students seeking volunteer opportunities and school organizers needing assistance.
+    </h2>
+  </div>
+
+  <div class="flex flex-wrap gap-3 justify-center mt-6">
+    <a href="student-dashboard.html" class="flex min-w-[84px] max-w-[480px] items-center justify-center rounded-lg h-10 px-4 bg-[#13ec6d] text-[#0d1b13] text-sm font-bold">
+      Find Opportunities
+    </a>
+
+    <button id="post-event-btn" class="flex min-w-[84px] max-w-[480px] items-center justify-center rounded-lg h-10 px-4 bg-[#e7f3ec] text-[#0d1b13] text-sm font-bold">
+      
+      <a
+      href="OrganizerDashboard.html">
+      Post an Event
+    </button>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusConnect - Buliga</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body class='font-sans bg-[#f8fcfa] min-h-screen'>
+
+  <div class="relative flex flex-col min-h-screen w-full"
+       style="
+         background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+                     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1770&q=80');
+         background-size: cover;
+         background-position: center;
+         background-attachment: fixed;
+       ">
+
+    <!-- HEADER -->
+    <header class="flex items-center justify-between border-b border-b-[#e7f3ec] px-10 py-3 bg-white/70 backdrop-blur-md">
+      <div class="flex items-center gap-4 text-[#0d1b13]">
+        <div class="size-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+          </svg>
+        </div>
+        <h2 class="text-[#0d1b13] text-lg font-bold tracking-[-0.015em]">Buliga</h2>
+
+        <!-- BACK BUTTON -->
+        <button onclick="goBackHome()" class="ml-4 px-3 py-1 bg-[#13ec6d] text-[#0d1b13] font-bold rounded-lg">
+          Home
+        </button>
+      </div>
+
+      <div class="flex flex-1 justify-end gap-8">
+        <div class="flex items-center gap-9">
+          <a class="text-[#0d1b13] text-sm font-medium" href="student-dashboard.html">Dashboard</a>
+          <a class="text-[#0d1b13] text-sm font-medium" href="volunteer.html">VolunteerOpportunities</a>
+          <a class="text-[#0d1b13] text-sm font-medium" href="OrganizerDashboard.html">MyEvents</a>
+          <a class="text-[#0d1b13] text-sm font-medium" href="StudentsProfile.html">Profile</a>
+        </div>
+        <button class="flex items-center justify-center rounded-lg h-10 bg-[#e7f3ec] text-[#0d1b13] px-2.5 gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+            </path>
+          </svg>
+        </button>
+        <div class="bg-cover rounded-full w-10 h-10"
+          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBr-pG_IyWfaDbZGTrUvHdAERn-oQeiDMEFwtyTHkqBXRaRU3snaDTsilpe_xd4hkZtBJr-CCy-fu7YwhX262WkCAlNOTj3RAloyBHQ-AtqVg4yLZUnXFXHFUrEnEicLXS30lpNXYQaBciiuHm4imzMB5Q8vFYIzFmA665e6PkOl2LLxvUEbzKH8J71iSCS4GLBhJg7fySH3Rka93mvWKMmvaZTZ6E9JTO5krLExgNUuAsOIYnlbtsN80YmcHnQa-TeX34BXb3WBeyT");'>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="px-40 flex flex-col flex-1 py-5">
+
+      <div class="flex flex-wrap justify-between gap-3 p-4">
+        <div class="flex min-w-72 flex-col gap-3">
+          <p class="text-[#0d1b13] tracking-light text-[32px] font-bold leading-tight">Welcome to Buliga!</p>
+          <p class="text-[#4c9a6c] text-sm font-normal leading-normal">Here's a snapshot of your upcoming activities and
+            important updates.</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-4 p-4">
+        <div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 bg-[#e7f3ec]">
+          <p class="text-[#0d1b13] text-base font-medium leading-normal">Upcoming Events</p>
+          <p class="text-[#0d1b13] tracking-light text-2xl font-bold leading-tight">3</p>
+        </div>
+      </div>
+
+      <!-- Volunteer Opportunities -->
+      <div class="mt-6">
+        <p class="text-[#0d1b13] tracking-light text-[32px] font-bold leading-tight mb-4">Volunteer Opportunities</p>
+        <div id="events-list"></div>
+
+        <div class="flex px-4 py-3 justify-start">
+          <button id="volunteerBtn"
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#13ec6d] text-[#0d1b13] text-sm font-bold">
+            <span class="truncate">Explore Volunteer Opportunities</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <h2 class="text-[#0d1b13] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Notifications
+      </h2>
+
+      <div class="flex items-center gap-4 bg-[#f8fcfa] px-4 min-h-[72px] py-2">
+        <div class="text-[#0d1b13] flex items-center justify-center rounded-lg bg-[#e7f3ec] shrink-0 w-12 h-12">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+            </path>
+          </svg>
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="text-[#0d1b13] text-base font-medium leading-normal line-clamp-1">Complete your registration for the
+            Community Cleanup event by Friday.</p>
+          <p class="text-[#4c9a6c] text-sm font-normal leading-normal line-clamp-2">Deadline approaching</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    function goBackHome() {
+      window.location.href = "home.html";
+    }
+
+    function goToVolunteerOpportunities() {
+      window.location.href = "volunteer.html";
+    }
+    document.getElementById("volunteerBtn").addEventListener("click", goToVolunteerOpportunities);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const eventsList = document.getElementById("events-list");
+      let events = JSON.parse(localStorage.getItem("volunteerEvents") || "[]");
+
+      eventsList.innerHTML = events.length ? "" : "<p>No volunteer opportunities yet.</p>";
+
+      events.forEach(event => {
+        const card = document.createElement("div");
+        card.classList.add("border", "p-4", "rounded-lg", "mb-3", "bg-[#e7f3ec]");
+        card.innerHTML = `
+          <h3 class="text-lg font-bold">${event.name}</h3>
+          <p>Date: ${event.date}</p>
+          <p>Time: ${event.time}</p>
+          <p>Location: ${event.location}</p>
+          <p>Roles: ${event.roles}</p>
+        `;
+        eventsList.appendChild(card);
+      });
+    });
+  </script>
+
+</body>
+</html>

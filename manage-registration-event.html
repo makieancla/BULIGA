@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900" />
+
+  <title>Stitch Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body>
+  <div class="relative flex min-h-screen w-full flex-col bg-[#f8fcfa] group/design-root overflow-x-hidden"
+    style='font-family: Inter, "Noto Sans", sans-serif;'>
+    <div class="layout-container flex h-full grow flex-col">
+      <!-- HEADER -->
+      <header class="flex items-center justify-between border-b border-[#e7f3ec] px-10 py-3">
+        <div class="flex items-center gap-4 text-[#0d1b13]">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold tracking-tight">Buliga</h2>
+
+          <!-- HOME BUTTON -->
+          <button onclick="goBackHome()" class="ml-4 px-3 py-1 bg-[#13ec6d] text-[#0d1b13] font-bold rounded-lg">
+            Home
+          </button>
+        </div>
+
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-sm font-medium" href="#">Dashboard</a>
+            <a class="text-sm font-medium" href="#">Events</a>
+            <a class="text-sm font-medium" href="#">Volunteers</a>
+            <a class="text-sm font-medium" href="#">Reports</a>
+          </div>
+          <div id="registrations-list" class="mt-4"></div>
+
+          <button class="flex h-10 items-center overflow-hidden rounded-lg bg-[#e7f3ec] px-2.5 text-sm font-bold">
+            <div class="text-[#0d1b13]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+                </path>
+              </svg>
+            </div>
+          </button>
+
+          <div class="size-10 rounded-full bg-cover bg-center"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0lmYDi643wqyysu-aq0yVKJ3pg6nwGYxKSW3LD-2CH6e6l_c5bxz0BIcryYTrI-feEzg1od8ZjD4844GMn0uTB0PeAIObc0DyaFHNtMpt-6ONFaTohM0zGwoTJsPUTMAOw7X7tqzxsY1ooogj02FE9_yX6hJ8kUFu-ZOUaZOJvLj78qPc3Q9bF5ZjXn-ln-exJIYy0hQmhTV7jXwenEqIh43i9uQ0gTBXgOnWUIOX-X6co_IETAHEi9EX9nZvEW7CCRLNZP_f_7WF");'>
+          </div>
+        </div>
+      </header>
+      
+      <!-- MAIN CONTENT -->
+      <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+
+          <!-- TITLE + ORGANIZER (DYNAMIC) -->
+          <div class="flex justify-between gap-3 p-4">
+            <div class="flex flex-col gap-3">
+              <p id="event-title" class="text-[#0d1b13] text-[32px] font-bold leading-tight">
+                Loading...
+              </p>
+
+              <p id="event-organizer" class="text-[#4c9a6c] text-sm font-normal leading-normal">
+                Loading...
+              </p>
+            </div>
+
+            <button
+              class="flex h-8 min-w-[84px] items-center justify-center rounded-lg bg-[#e7f3ec] px-4 text-sm font-medium">
+              Edit Event
+            </button>
+          </div>
+
+          <!-- EVENT IMAGE -->
+          <div class="@container">
+            <div class="@[480px]:px-4 @[480px]:py-3">
+              <div class="min-h-[218px] w-full overflow-hidden bg-cover bg-center @[480px]:rounded-lg"
+                style='background-image: url("https://www.preventionweb.net/sites/default/files/styles/ultrawide_16_6/public/Volunteerism-DRR-min_0.jpg?itok=tVL0dVEU");'>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVENT DETAILS -->
+          <h3 class="text-lg font-bold px-4 pb-2 pt-4">Event Details</h3>
+
+          <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
+
+            <!-- EVENT NAME -->
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-[#cfe7d9] py-5">
+              <p class="text-[#4c9a6c] text-sm font-normal">Event Name</p>
+              <p id="event-name-details" class="text-sm text-[#0d1b13]">Loading...</p>
+            </div>
+
+            <!-- DATE -->
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-[#cfe7d9] py-5">
+              <p class="text-[#4c9a6c] text-sm font-normal">Date</p>
+              <p id="event-date" class="text-sm text-[#0d1b13]">Loading...</p>
+            </div>
+
+            <!-- TIME -->
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-[#cfe7d9] py-5">
+              <p class="text-[#4c9a6c] text-sm font-normal">Time</p>
+              <p id="event-time" class="text-sm text-[#0d1b13]">Loading...</p>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-[#cfe7d9] py-5">
+              <p class="text-[#4c9a6c] text-sm font-normal">Location</p>
+              <p id="event-location" class="text-sm text-[#0d1b13]">Loading...</p>
+            </div>
+
+            <!-- VOLUNTEER ROLES -->
+            <div class="col-span-2 grid grid-cols-subgrid border-t border-[#cfe7d9] py-5">
+              <p class="text-[#4c9a6c] text-sm font-normal">Volunteer Roles Needed</p>
+              <p id="event-roles-details" class="text-sm text-[#0d1b13] whitespace-pre-line">
+                Loading...
+              </p>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- HOME BUTTON SCRIPT -->
+  <script>
+    function goBackHome() {
+      window.location.href = "OrganizerDashboard.html";
+    }
+  </script>
+
+  <!-- LOAD EVENT DATA -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const eventData = JSON.parse(localStorage.getItem("latestEvent"));
+      if (!eventData) return;
+
+      // Update top section
+      document.getElementById("event-title").textContent = eventData.name;
+      document.getElementById("event-organizer").textContent = "Organized by: You";
+
+      // Update Event Details section
+      document.getElementById("event-name-details").textContent = eventData.name;
+      document.getElementById("event-date").textContent = eventData.date;
+      document.getElementById("event-time").textContent = eventData.time || "Not specified";
+      document.getElementById("event-location").textContent = eventData.location;
+      document.getElementById("event-roles-details").textContent = eventData.roles || "N/A";
+    });
+  </script>
+
+
+  </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const registrationsList = document.getElementById("registrations-list");
+  const registrations = JSON.parse(localStorage.getItem("registrations") || "[]");
+
+  if (!registrations.length) {
+    registrationsList.innerHTML = "<p>No one has registered yet.</p>";
+    return;
+  }
+
+  registrations.forEach(reg => {
+    const row = document.createElement("div");
+    row.classList.add("border", "p-3", "rounded-lg", "mb-2", "bg-[#e7f3ec]");
+    row.innerHTML = `
+      <p><strong>Event:</strong> ${reg.eventName}</p>
+      <p><strong>Student:</strong> ${reg.studentName}</p>
+    `;
+    registrationsList.appendChild(row);
+  });
+});
+
+</script>
+
+</body>
+
+</html>

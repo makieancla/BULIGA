@@ -1,0 +1,127 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex h-auto min-h-screen w-full flex-col bg-[#f8fcfa] group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3ec] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0d1b13]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              
+            </div>
+            <h2 class="text-[#0d1b13] text-lg font-bold leading-tight tracking-[-0.015em]">Buliga</h2>
+             <!-- BACK BUTTON -->
+        <button onclick="goBackHome()" 
+          class="ml-4 px-3 py-1 bg-[#13ec6d] text-[#0d1b13] font-bold rounded-lg">
+          Home
+        </button>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d1b13] text-sm font-medium leading-normal" href="#">Dashboard</a>
+              <a class="text-[#0d1b13] text-sm font-medium leading-normal" href="#">Opportunities</a>
+              <a class="text-[#0d1b13] text-sm font-medium leading-normal" href="#">Profile</a>
+            </div>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLpjtm_TLiKcpakn33PKdmX-o0j6bsB4rGTi4YA_fwx3NXOuBl9X9hReTmj4X-ikxW_oj4qVu8kybaz18SchTXfA-L2-sli8SzWLsXUYGixoKoyyZXxmndkmsnf_KhMyu-VS10MfBlWmKj2-0YbuUzO9eu4JAwxJvZsLrWz_Zlr0_AoWDNlKcIctINjZtcvMABLuRbNEhIWO9_eZNDb92RN0IsGJTj8TLi0yFOgm6pamP4w2doxgAVJMNEgGcj4okagUXfUV-kYtWs");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-[#0d1b13] tracking-light text-[32px] font-bold leading-tight">Profile Settings</p>
+                <p class="text-[#4c9a6c] text-sm font-normal leading-normal">Manage your personal information and account settings.</p>
+              </div>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d1b13] text-base font-medium leading-normal pb-2">Full Name</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d1b13] focus:outline-0 focus:ring-0 border border-[#cfe7d9] bg-[#f8fcfa] focus:border-[#cfe7d9] h-14 placeholder:text-[#4c9a6c] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d1b13] text-base font-medium leading-normal pb-2">Course</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d1b13] focus:outline-0 focus:ring-0 border border-[#cfe7d9] bg-[#f8fcfa] focus:border-[#cfe7d9] h-14 placeholder:text-[#4c9a6c] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d1b13] text-base font-medium leading-normal pb-2">Contact Number</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d1b13] focus:outline-0 focus:ring-0 border border-[#cfe7d9] bg-[#f8fcfa] focus:border-[#cfe7d9] h-14 placeholder:text-[#4c9a6c] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d1b13] text-base font-medium leading-normal pb-2">Email</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d1b13] focus:outline-0 focus:ring-0 border border-[#cfe7d9] bg-[#f8fcfa] focus:border-[#cfe7d9] h-14 placeholder:text-[#4c9a6c] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-[#0d1b13] text-base font-medium leading-normal pb-2">Password</p>
+                <input
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d1b13] focus:outline-0 focus:ring-0 border border-[#cfe7d9] bg-[#f8fcfa] focus:border-[#cfe7d9] h-14 placeholder:text-[#4c9a6c] p-[15px] text-base font-normal leading-normal"
+                  value=""
+                />
+              </label>
+            </div>
+            <div class="flex px-4 py-3 justify-end">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#13ec6d] text-[#0d1b13] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Update Profile</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- Your current HTML content -->
+
+<!-- Add this just before </body> -->
+<script>
+  // Back button function
+  function goBackHome() {
+    window.location.href = "student-dashboard.html"; // Change "home.html" to your dashboard page if needed
+  }
+</script>
+</body>
+</html>
+
+
+  </body>
+</html>

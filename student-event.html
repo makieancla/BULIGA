@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- ⭐ ADDED VOLUNTEERISM BACKGROUND + GLASS UI -->
+    <style>
+      body {
+        background-image: 
+          linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+          url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      .layout-content-container {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(6px);
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      }
+
+      header {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+    <!-- ⭐ END OF ADDED STYLE -->
+  </head>
+
+  <body>
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e7f3ec] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0d1b13]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-[#0d1b13] text-lg font-bold leading-tight tracking-[-0.015em]">Buliga</h2>
+          </div>
+
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d1b13] text-sm font-medium leading-normal" href="student-dashboard.html">Dashboard</a>
+              <a class="text-[#0d1b13] text-sm font-medium leading-normal" href="volunteer.html">Opportunities</a>
+
+              <a class="text-[#0d1b13] text-sm font-medium leading-normal" href="#">Profile</a>
+            </div>
+
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#e7f3ec] text-[#0d1b13] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+            >
+              <div class="text-[#0d1b13]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrDMcQPQmlJsXjz8eiy58E4c-VlW1CAPzfJz6nbJvmlHBaiHBUjfbZysNsdLooKJTeL1CigfKCGQ2Dkuc-Lx2RtVRpPu7Gjo1Z732C1pPwRiuaxisKBtQUcAekZtNcEfJHZT0gJvudmrYD8cl1pUwTwuqctKTwc9XOa1fHpWRmBvIc4FTVoV9M3Ktt-dkFEmMwqT-QHuokM0iV-pOx0XZe1idQhAje2YdlEm4mOg2_i_KwSFF5QsVsZqI5wHiagRRBH7RoQdwzLin6");'
+            ></div>
+          </div>
+        </header>
+
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0d1b13] tracking-light text-[32px] font-bold leading-tight min-w-72">
+                My Events
+              </p>
+            </div>
+
+            <h3 class="text-[#0d1b13] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+              Upcoming Events
+            </h3>
+
+            <div id="upcoming-events"></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let registeredEvents = JSON.parse(localStorage.getItem("registeredEvents") || "[]");
+        let allEvents = JSON.parse(localStorage.getItem("volunteerEvents") || "[]");
+
+        let upcomingContainer = document.getElementById("upcoming-events");
+
+        upcomingContainer.innerHTML = "";
+
+        allEvents.forEach(event => {
+          if (registeredEvents.includes(event.name)) {
+            const item = document.createElement("div");
+            item.classList.add("flex", "items-center", "gap-4", "px-4", "py-2", "bg-[#f8fcfa]", "justify-between");
+
+            item.innerHTML = `
+              <div>
+                <p class="font-bold text-lg">${event.name}</p>
+                <p class="text-sm text-[#4c9a6c]">${event.date}</p>
+              </div>
+              <button class="cancel-btn px-2 py-1 bg-red-200 rounded" data-event="${event.name}">
+                Cancel
+              </button>
+            `;
+
+            upcomingContainer.appendChild(item);
+
+            const cancelBtn = item.querySelector(".cancel-btn");
+            cancelBtn.addEventListener("click", () => {
+              if (confirm(`Remove "${event.name}" from your events?`)) {
+                registeredEvents = registeredEvents.filter(e => e !== event.name);
+                localStorage.setItem("registeredEvents", JSON.stringify(registeredEvents));
+                item.remove();
+              }
+            });
+          }
+        });
+      });
+    </script>
+
+  </body>
+</html>

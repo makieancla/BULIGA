@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign Up - Buliga</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<style>
+  body { font-family: 'Inter', sans-serif; margin:0; padding:0; }
+  body::before {
+    content: "";
+    position: fixed;
+    top:0; left:0; width:100%; height:100%;
+    background-image: url('https://donorbox.org/nonprofit-blog/wp-content/uploads/2024/05/Volunteerism-in-action.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: -1;
+  }
+  .form-container { background-color: rgba(255,255,255,0.95); border-radius: 12px; padding: 2rem; max-width:400px; margin:auto; margin-top:80px; }
+  .btn-signup { background-color:#13ec6d; color:#0d1b13; padding:10px; width:100%; border:none; border-radius:8px; cursor:pointer; }
+  .btn-signup:hover { background-color:#10d65a; }
+</style>
+</head>
+<body>
+  <div class="form-container">
+    <h2 class="text-center font-bold text-xl mb-4">Create your account</h2>
+    <div>
+      <input id="full-name" placeholder="Full Name" class="w-full p-3 mb-3 rounded border" type="text" required>
+      <input id="email-address" placeholder="Email" class="w-full p-3 mb-3 rounded border" type="email" required>
+      <input id="password" placeholder="Password" class="w-full p-3 mb-3 rounded border" type="password" required>
+      <button id="signupButton" class="btn-signup">Sign Up</button>
+      <p class="text-center mt-2 text-sm">Already have an account? <a href="login.html" class="text-green-600 font-medium">Log in</a></p>
+    </div>
+  </div>
+
+<script>
+document.getElementById('signupButton').addEventListener('click', function() {
+    const name = document.getElementById('full-name').value.trim();
+    const email = document.getElementById('email-address').value.trim();
+    const password = document.getElementById('password').value;
+
+    if(!name || !email || !password){
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    // Get existing users from localStorage or create empty array
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+
+    // Check if email already exists
+    if(users.some(u => u.email === email)){
+        alert('This email is already registered.');
+        return;
+    }
+
+    // Add new user
+    users.push({name, email, password});
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert('Registration successful! You can now log in.');
+    window.location.href = 'login.html';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+  />
+
+  <title>Stitch Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+
+<body>
+  <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden"
+       style='
+        font-family: Lexend, "Noto Sans", sans-serif;
+        background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+                    url("https://volunteerhub.com/hs-fs/hubfs/Imported_Blog_Media/Life-Enriching-Benefits-of-Volunteerism.jpg?width=450&height=250&name=Life-Enriching-Benefits-of-Volunteerism.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+       '>
+
+    <div class="layout-container flex h-full grow flex-col">
+
+      <!-- HEADER -->
+      <header class="flex items-center justify-between border-b border-[#e7f3ec] px-10 py-3 bg-white/70 backdrop-blur-md">
+        <div class="flex items-center gap-4 text-[#0d1b13]">
+          <div class="size-4">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h2 class="text-lg font-bold tracking-tight">Buliga</h2>
+
+          <button onclick="goBackHome()" 
+                  class="ml-4 px-3 py-1 bg-[#13ec6d] text-[#0d1b13] font-bold rounded-lg">
+            Home
+          </button>
+        </div>
+
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-sm font-medium" href="#">Dashboard</a>
+            <a class="text-sm font-medium" href="#">NewEvent</a>
+            <a class="text-sm font-medium" href="#">ManageEvent</a>
+            <a class="text-sm font-medium" href="#">Reports</a>
+            <a class="text-sm font-medium" href="OrganizerProfile.html">Profile</a>
+          </div>
+
+          <div
+            class="bg-center bg-cover rounded-full size-10"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1E7SIHHfpW66en6gk-mtsS9KrFxHaAkf4A_Kdgt7nk9y3chmJIGeFzRy-6LPtq8yg4k3ITfSW5Kyk3dtH-MmIeM0ZjdbwnWc-YQyMZ1ben5aGlEe4CAL7A8Xk2xs9ePtdd8ZXM2Kf1AVZOrYxAtyzphWo31nQUkDZYFd6VYpU1d6cus58UfuXyknKsYsqRncpwYaktOCVnFTwvXANqio5w_PKrs9Ml-2a2SRV6yyka4lOn78dyoWaT186mL9whh_8ItHd2FA5wAQk");'>
+          </div>
+        </div>
+      </header>
+
+      <!-- PAGE CONTENT -->
+      <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1"
+             style="
+               background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+                           url('https://counseling.online.wfu.edu/blog/media_1672719816911de3bf308c96d0d093611505e4ba9.jpg?width=750&format=jpg&optimize=medium');
+               background-size: cover;
+               background-position: center;
+               backdrop-filter: blur(6px);
+               border-radius: 16px;
+               padding: 20px;
+             ">
+          
+          <div class="p-4">
+            <p class="text-[32px] font-bold text-[#0d1b13]">Post a New Opportunity</p>
+          </div>
+
+          <!-- EVENT FORM -->
+          <div class="flex max-w-[480px] flex-col gap-4 px-4 py-3">
+
+            <label class="flex flex-col">
+              <p class="text-base font-medium pb-2">Event Name</p>
+              <input id="event-name" placeholder="Enter event name"
+                     class="form-input h-14 rounded-lg bg-[#e7f3ec] p-4" />
+            </label>
+
+            <label class="flex flex-col">
+              <p class="text-base font-medium pb-2">Date</p>
+              <input id="event-date" type="date"
+                     class="form-input h-14 rounded-lg bg-[#e7f3ec] p-4" />
+            </label>
+
+            <label class="flex flex-col">
+              <p class="text-base font-medium pb-2">Time</p>
+              <input id="event-time" type="time"
+                     class="form-input h-14 rounded-lg bg-[#e7f3ec] p-4" />
+            </label>
+
+            <label class="flex flex-col">
+              <p class="text-base font-medium pb-2">Location</p>
+              <input id="event-location" placeholder="Enter location"
+                     class="form-input h-14 rounded-lg bg-[#e7f3ec] p-4" />
+            </label>
+
+            <label class="flex flex-col">
+              <p class="text-base font-medium pb-2">Volunteer Roles Needed</p>
+              <textarea id="event-roles" placeholder="Describe the volunteer roles"
+                        class="form-input min-h-36 rounded-lg bg-[#e7f3ec] p-4"></textarea>
+            </label>
+
+          </div>
+
+          <!-- PUBLISH BUTTON -->
+          <div class="flex px-4 py-3 justify-end">
+            <button id="publishBtn"
+                    class="h-10 px-4 rounded-lg bg-[#13ec6d] text-[#0d1b13] font-bold">
+              Publish
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function goBackHome() {
+      window.location.href = "OrganizerDashboard.html";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const publishButton = document.getElementById("publishBtn");
+
+      publishButton.addEventListener("click", () => {
+        const eventName = document.getElementById("event-name").value.trim();
+        const eventDate = document.getElementById("event-date").value.trim();
+        const eventTime = document.getElementById("event-time").value.trim();
+        const eventLocation = document.getElementById("event-location").value.trim();
+        const volunteerRoles = document.getElementById("event-roles").value.trim();
+
+        if (!eventName || !eventDate || !eventTime || !eventLocation || !volunteerRoles) {
+          alert("Please fill out all fields.");
+          return;
+        }
+
+        const newEvent = {
+          id: Date.now(),
+          name: eventName,
+          date: eventDate,
+          time: eventTime,
+          location: eventLocation,
+          roles: volunteerRoles
+        };
+
+        let events = JSON.parse(localStorage.getItem("volunteerEvents") || "[]");
+        events.push(newEvent);
+        localStorage.setItem("volunteerEvents", JSON.stringify(events));
+
+        localStorage.setItem("latestEvent", JSON.stringify(newEvent));
+
+        window.location.href = "manage-registration-event.html";
+      });
+    });
+  </script>
+
+</body>
+</html>

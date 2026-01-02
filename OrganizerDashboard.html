@@ -1,0 +1,212 @@
+<html>
+<head>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link
+    rel="stylesheet"
+    as="style"
+    onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&family=Lexend:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900"
+  />
+
+  <title>Volunteer Dashboard</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <style>
+    /* --- COLOR PALETTE --- */
+    /* Primary (Action/Brand): A rich, vibrant green */
+    :root {
+      --primary-green: #00d287;
+      --primary-green-dark: #00b874;
+      --dark-text: #1a3028;
+      --light-bg-alpha: rgba(255, 255, 255, 0.95); /* More opaque */
+    }
+
+     body {
+      font-family: 'Lexend', 'Noto Sans', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      /* Nature background with gradient overlay */
+      background: linear-gradient(rgba(240, 240, 240, 0.35), rgba(240, 240, 240, 0.35)),
+                  url(https://donorbox.org/nonprofit-blog/wp-content/uploads/2024/05/Volunteerism-in-action.png);
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+      color: var(--dark-text);
+
+    .layout-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .layout-content-container {
+      /* Increased opacity and deeper shadow for a more 'lifting' effect */
+      background: var(--light-bg-alpha);
+      backdrop-filter: blur(8px); /* Slightly stronger blur */
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Deeper shadow */
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+    }
+
+    .layout-content-container:hover {
+      transform: translateY(-8px); /* More pronounced lift */
+      /* Adding a subtle green glow for 'interactive' feel */
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 10px var(--primary-green);
+    }
+
+    header {
+      background: var(--light-bg-alpha);
+      backdrop-filter: blur(10px); /* Stronger blur for the header */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn-home {
+      background: var(--primary-green);
+      color: white; /* Changed text color for better contrast */
+      font-weight: 600; /* Medium bold */
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.1s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .btn-home:hover {
+      background: var(--primary-green-dark);
+      transform: scale(1.02);
+    }
+
+    .nav-link:hover {
+      color: var(--primary-green);
+      text-decoration: underline;
+    }
+
+    .table-container {
+      background: rgba(255,255,255,0.9); /* Slightly more opaque */
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      padding: 12px;
+      overflow-x: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    table th, table td {
+      white-space: nowrap;
+    }
+
+    /* Enhanced table row hover */
+    table tr:hover {
+      background-color: rgba(0, 210, 135, 0.1); /* Use primary green for hover */
+    }
+
+    .btn-create-event {
+        background-color: var(--primary-green);
+        color: white;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    .btn-create-event:hover {
+        background-color: var(--primary-green-dark);
+        transform: translateY(-1px);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="layout-container flex flex-col min-h-screen">
+    <header class="flex items-center justify-between px-10 py-3">
+      <div class="flex items-center gap-4 text-var(--dark-text)">
+        <h2 class="text-lg font-bold">Buliga</h2>
+        <button onclick="goBackHome()" class="btn-home ml-4 px-3 py-1">Home</button>
+      </div>
+
+      <div class="flex gap-8">
+        <a href="#" class="text-sm font-medium nav-link">Dashboard</a>
+        <a href="#" class="text-sm font-medium nav-link">Events</a>
+        <a href="#" class="text-sm font-medium nav-link">Volunteers</a>
+        <a href="#" class="text-sm font-medium nav-link">Reports</a>
+        <a href="OrganizerProfile.html" class="text-sm font-medium nav-link">Profile</a>
+        
+      </div>
+    </header>
+
+   <div class="px-10 py-5 flex justify-center flex-1">
+  <div
+    class="layout-content-container flex flex-col max-w-[960px] w-full"
+    style="background: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+           url('https://cdn.prod.website-files.com/623c91abc34d6c024e53d529/656e2d179f18fb489e687e2e_volunteerism.jpg');
+           background-size: cover;
+           background-position: center;
+           backdrop-filter: blur(6px);"
+  >
+    <div class="flex justify-between items-center mb-4">
+      <p class="text-2xl font-bold text-var(--dark-text)">My Events</p>
+      <button class="px-4 py-2 rounded font-medium btn-create-event">
+        <a href="create-event.html">Create New Event</a>
+      </button>
+    </div>
+
+    <div class="table-container">
+      <table class="w-full text-left text-sm font-light">
+        <thead class="border-b font-medium border-gray-300">
+          <tr>
+            <th scope="col" class="px-6 py-4">Event Name</th>
+            <th scope="col" class="px-6 py-4">Date</th>
+            <th scope="col" class="px-6 py-4">Location</th>
+            <th scope="col" class="px-6 py-4">Volunteers Needed</th>
+        
+          </tr>
+        </thead>
+        <tbody id="events-table-body">
+          <!-- Events dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+              </tr>
+            </thead>
+           
+          </table>
+          <tbody id="events-table-body">
+  <!-- Events will be added here dynamically -->
+</tbody>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const eventsTableBody = document.getElementById("events-table-body");
+
+  const allEvents = JSON.parse(localStorage.getItem("allEvents")) || [];
+
+  allEvents.forEach(event => {
+    const row = document.createElement("tr");
+    row.classList.add("border-b", "border-gray-300");
+
+    row.innerHTML = `
+      <td class="px-6 py-4">${event.name}</td>
+      <td class="px-6 py-4">${event.date} ${event.time}</td>
+      <td class="px-6 py-4">${event.location}</td>
+      <td class="px-6 py-4">${event.roles}</td>
+    `;
+
+    eventsTableBody.appendChild(row);
+  });
+});
+</script>
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goBackHome() {
+      window.location.href = "volunteer.html";
+    }
+  </script>
+</body>
+</html>
